@@ -1,10 +1,9 @@
-
-Yeoman Generator for Gumby 2.6 Framework
-======================================
+Yeoman Generator for Gumby 2.6 Framework using Assemble.io and RequireJS
+========================================================================
 
 ## Usage
 
-- Install it (only once): `npm install -g generator-gumby-assemble`
+- Install it (only once): `npm install -g generator-gumby`
 
 - Create a new folder and cd into it: `mkdir gumby && cd $_`
 
@@ -26,7 +25,11 @@ Yeoman Generator for Gumby 2.6 Framework
   Defaults to `mocha`. Can be switched for
   another supported testing framework like `jasmine`.
 
+## Using Assemble to generate pages
+- [Assemble.io](http://assemble.io/)
 
+## Using RequireJS for modular script loading
+- [Require.js](http://requirejs.org/)
 
 ## Gumby Framework
 
