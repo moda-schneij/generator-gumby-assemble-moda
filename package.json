@@ -1,0 +1,35 @@
+{
+  "name": "generator-gumby-assemble",
+  "version": "0.1.0",
+  "description": "Yeoman generator for Gumby 2.6 Framework with Assemble.io",
+  "keywords": [
+    "yeoman-generator",
+    "gumby",
+    "rwd",
+    "assemble",
+    "require"
+  ],
+  "homepage": "https://github.com/fxuniverse/generator-gumby-assemble",
+  "bugs": {
+    "url": "https://github.com/fxuniverse/generator-gumby-assemble.git/issues"
+  },
+  "author": {
+    "name": "Andrey Tabachnik"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fxuniverse/generator-gumby-assemble.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "yeoman-generator": "~0.10.3"
+  },
+  "devDependencies": {
+    "mocha": "~1.9.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
