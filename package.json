@@ -1,6 +1,6 @@
 {
   "name": "generator-gumby-assemble",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Yeoman generator for Gumby 2.6 Framework with Assemble.io",
   "keywords": [
     "yeoman-generator",

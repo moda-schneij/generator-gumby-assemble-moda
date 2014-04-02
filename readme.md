@@ -3,11 +3,11 @@ Yeoman Generator for Gumby 2.6 Framework using Assemble.io and RequireJS
 
 ## Usage
 
-- Install it (only once): `npm install -g generator-gumby`
+- Install it (only once): `npm install -g generator-gumby-assemble`
 
 - Create a new folder and cd into it: `mkdir gumby && cd $_`
 
-- Run `yo gumby`
+- Run `yo gumby-assemble`
 
 - Run `grunt` to build and `grunt server` to preview
 
