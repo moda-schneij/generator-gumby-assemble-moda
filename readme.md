@@ -26,7 +26,8 @@ $ cd gumby-assemble-generator
 $ git clone https://github.com/moda-schneij/generator-gumby-assemble-moda.git
 ```
 
-- Create a global npm link to use the generator on your machine: `npm link`
+- While in this directory, create a global npm link to use the generator on your machine by running `npm link`
+  -(if this fails for any reason, try it again)
 	
 - Return to your sites folder, create a new folder, and cd into it:
 
