@@ -1,9 +1,23 @@
-Yeoman Generator for Gumby 2.6 Framework using Assemble.io and RequireJS
+Yeoman Generator (Moda fork, modified) for Gumby 2.6 Framework using Assemble.io and RequireJS
 ========================================================================
 
 ## Usage
 
-- Install it (only once): `npm install -g generator-gumby-assemble`
+- Prerequisites:
+
+	- node (latest) installed globally
+	- npm installed globally
+	- Ruby
+	- Sass
+	- Compass (tbd what extra notes might apply here)
+	- Modular Scale
+	- Sassy Math
+
+	
+<!-- Install it (only once): `npm install -g generator-gumby-assemble`-->
+Install yo and generator-generator:
+	
+	npm install -g yo generator-generator
 
 - Create a new folder and cd into it: `mkdir gumby && cd $_`
 
