@@ -25,7 +25,6 @@ Clone this repo into your desired generator directory (not the directory from wh
     $ cd gumby-assemble-generator
     $ git clone https://github.com/moda-schneij/generator-gumby-assemble-moda.git
 
-
 - Create a global npm link to use the generator on your machine: `npm link`
 	
 - Return to your sites folder, create a new folder, and cd into it:
@@ -34,8 +33,6 @@ Clone this repo into your desired generator directory (not the directory from wh
     $ cd /sites
     $ mkdir gumby-assemble
     $ cd gumby-assemble
-
-
 
 - Run `yo gumby-assemble-moda`
 
