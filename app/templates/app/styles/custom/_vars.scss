@@ -1,0 +1,21 @@
+// Your custom variable SCSS should be written here...
+$modern_plum: #a50069;
+$light_plum: #f6e6f0;
+$warm_brown: #493b31;
+$modern_yellow: #ffe92c;
+$modern_aqua: #0c9c9e;
+$button_aqua: #7accc4;
+$button_aqua_hover: #0c9c9e;
+$dark_aqua: #0e5952;
+$ligher_yellow: #fef9ce;
+$banner_border: rgb(191,231,227); /*#7accc4 with 48% opacity*/
+$body_bgcolor: rgb(230,245,245);
+$compact_nav_bgcolor: rgb(238,238,238);
+$compact_nav_selected_bgcolor: rgb(191,231,227);
+$custom_respond: 400px;
+$home_img_break1: 700px; //$home_img vars are taken from _home-img.haml partial, and should match
+$home_img_break2: 466px;
+$home_img_break3: 465px;
+$lead-in-break: 800px;
+$logo-shrink-pct: 0.8137931034482759;
+$footer_nav_border: mix(#fff, $warm_brown, 67%); //this is the correct way to mimic photoshop fill/opacity adjustments, generally, rather than using the lighten() function.

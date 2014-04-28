@@ -3,15 +3,15 @@ Yeoman Generator (Moda fork, modified) for Gumby 2.6 Framework using Assemble.io
 
 ## Usage
 
-- Prerequisites:
+Prerequisites:
 
-	- node (latest) installed globally
-	- npm installed globally
-	- Ruby
-	- Sass
-	- Compass (tbd what extra notes might apply here)
-	- Modular Scale
-	- Sassy Math
+- node (latest) installed globally
+- npm installed globally
+- Ruby
+- Sass
+- Compass (tbd what extra notes might apply here)
+- Modular Scale
+- Sassy Math
 
 	
 <!-- Install it (only once): `npm install -g generator-gumby-assemble`-->
@@ -41,6 +41,8 @@ $ cd gumby-assemble
 - Run `yo gumby-assemble-moda`
 
 - Run `grunt` to build and `grunt server` to preview
+
+- You can run `yo gumby-assemble-moda` and choose to overwrite your entire site if you need to tweak the generator and recreate the project
 
 
 
