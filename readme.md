@@ -15,13 +15,28 @@ Yeoman Generator (Moda fork, modified) for Gumby 2.6 Framework using Assemble.io
 
 	
 <!-- Install it (only once): `npm install -g generator-gumby-assemble`-->
-Install yo and generator-generator:
+Install yo and generator-generator: `npm install -g yo generator-generator`
+
+
+Clone this repo into your desired generator directory (not the directory from which you'll end up working):
+
+  
+    $ mkdir gumby-assemble-generator
+    $ cd gumby-assemble-generator
+    $ git clone https://github.com/moda-schneij/generator-gumby-assemble-moda.git
+
+
+- Create a global npm link to use the generator on your machine: `npm link`
 	
-	npm install -g yo generator-generator
+- Return to your sites folder, create a new folder, and cd into it:
 
-- Create a new folder and cd into it: `mkdir gumby && cd $_`
 
-- Run `yo gumby-assemble`
+    $ cd /sites
+    $ mkdir gumby-assemble
+    $ cd gumby-assemble
+
+
+- Run `yo gumby-assemble-moda`
 
 - Run `grunt` to build and `grunt server` to preview
 
