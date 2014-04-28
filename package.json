@@ -10,16 +10,16 @@
     "require",
     "moda"
   ],
-  "homepage": "https://github.com/fxuniverse/generator-gumby-assemble",
+  "homepage": "https://github.com/Josh68/generator-gumby-assemble",
   "bugs": {
-    "url": "https://github.com/fxuniverse/generator-gumby-assemble.git/issues"
+    "url": "https://github.com/Josh68/generator-gumby-assemble.git/issues"
   },
   "author": {
     "name": "Andrey Tabachnik"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/fxuniverse/generator-gumby-assemble.git"
+    "url": "git://github.com/Josh68/generator-gumby-assemble.git"
   },
   "scripts": {
     "test": "mocha"
