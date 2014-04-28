@@ -10,16 +10,16 @@
     "require",
     "moda"
   ],
-  "homepage": "https://github.com/Josh68/generator-gumby-assemble",
+  "homepage": "https://github.com/moda-schneij/generator-gumby-assemble-moda",
   "bugs": {
-    "url": "https://github.com/Josh68/generator-gumby-assemble.git/issues"
+    "url": "https://github.com/moda-schneij/generator-gumby-assemble-moda.git/issues"
   },
   "author": {
     "name": "Andrey Tabachnik"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Josh68/generator-gumby-assemble.git"
+    "url": "git://github.com/moda-schneij/generator-gumby-assemble-moda.git"
   },
   "scripts": {
     "test": "mocha"
