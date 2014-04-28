@@ -20,19 +20,21 @@ Install yo and generator-generator: `npm install -g yo generator-generator`
 
 Clone this repo into your desired generator directory (not the directory from which you'll end up working):
 
-  
-    $ mkdir gumby-assemble-generator
-    $ cd gumby-assemble-generator
-    $ git clone https://github.com/moda-schneij/generator-gumby-assemble-moda.git
+```  
+$ mkdir gumby-assemble-generator
+$ cd gumby-assemble-generator
+$ git clone https://github.com/moda-schneij/generator-gumby-assemble-moda.git
+```
 
 - Create a global npm link to use the generator on your machine: `npm link`
 	
 - Return to your sites folder, create a new folder, and cd into it:
 
-
-    $ cd /sites
-    $ mkdir gumby-assemble
-    $ cd gumby-assemble
+```
+$ cd /sites
+$ mkdir gumby-assemble
+$ cd gumby-assemble
+```
 
 - Run `yo gumby-assemble-moda`
 
