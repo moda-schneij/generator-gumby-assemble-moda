@@ -1,0 +1,39 @@
+/* ==========================================================================
+  Top bar (within header)
+   ========================================================================== */
+
+#topbar{
+  @include rem(margin-bottom, 8px); //roughly to comp, taking decenders into account
+  white-space: nowrap; //to control wrapping of hamburger menu and title at lowest widths;
+  position: relative;
+  @include rem(min-width, 320px);
+  @include respond(desktop) {
+  	margin-bottom: 22px;
+  }
+}
+
+/* ==========================================================================
+  Topbar title
+   ========================================================================== */
+
+.topbar-title  {
+  @include font-size($norm);	
+  display: inline;
+  position: relative;
+  white-space: nowrap;
+  margin-bottom: 0;
+  padding: 0;
+  @include rem(line-height, 1em);
+  @include rem(left, 40px);
+  @include respond(desktop){
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 0;
+    text-align: right;
+    left: 0;
+    @include font-size($med)
+  }
+  color: $modern-plum;
+}

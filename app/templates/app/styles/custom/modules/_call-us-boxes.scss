@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Call-us boxes
+   ========================================================================== */
+
+.call-us {
+	@extend %call-base;
+}
+
+.call-us-text {
+	display: inline-block;
+}
+
+.icon-icon_callus {
+	@include rem(padding-left, 30px);
+}
+
+#branding, .lead-in-nested-col {
+	.text {
+      display: none; //override by showing only the "call us" span, below
+    }
+}
+
+#branding { //the absolutely positioned CTA at the top of all but the home page
+	.call-us {
+	    position: absolute;
+	    display: none;
+	   	right: 0;
+	    @include rem(top, -20px);
+	   	@include rem(right, -20px);
+	    @include border-bottom-left-radius(5px);
+	    &.is-visible-topbar {
+	      display: block;
+	    }
+	    .text {
+	      display: none; //override by showing only the "call us" span, below
+	    }
+	    .phone {
+			@include font-size($med);
+	    }
+	    @include respond(desktop) { //no way to combine the media query and selector-based override here, although the rules are identical
+	      @include font-size(15px); //breaking the rules, overriding ms
+	      .text {
+	        display: inline;
+	      }
+	      .icon-icon_callus {
+	        display: none;
+	      }
+	    }
+	}
+}
+
+#main-content {
+	.icon-icon_callus {
+       display: none;
+    }
+	.call-us {
+		display: none;
+		@include rem(padding, 10px 15px);
+		@include rem(border-radius, 6px);
+		@include rem(margin-bottom, 13px);
+		@include respond(tablets) {
+			display: block;
+		}
+		@include respond(desktop) { //for call-us in columns
+			width: auto;
+			display: block;
+		}
+	}
+}
+
+.lt-ie9 { //specific rules for IE8
+	.icon-icon_callus {
+		display: inline-block;
+		@include rem(height, 26px);
+		@include rem(width, 26px);
+		@include respond(desktop){
+        	display: none; //added specificity
+      	}
+	}
+	#main-content .lead-in-nested-col {
+		.icon-icon_callus {
+			display: inline-block;
+		}
+	}
+	.call-us-text {
+		padding-left: 1px;
+	}
+}

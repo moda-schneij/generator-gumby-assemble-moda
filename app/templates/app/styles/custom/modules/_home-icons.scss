@@ -1,0 +1,42 @@
+/* ==========================================================================
+  Home page icon set
+   ========================================================================== */
+
+.with-icon {
+	padding-left: 0;
+	text-align: center;
+	> * {
+		text-align: left;
+	}
+	.icon {
+		//@include rem(background-size, 80px);
+		//background-position: top center;
+		@include rem(height, 80px);
+		@include rem(width, 80px);
+		display: inline-block;
+		position: relative;
+	}
+	@include respond(desktop) {
+		text-align: left;
+		@include rem(padding-top, 7.037px); //from typography, by way of rem-ified calculated px, adding to the container and removing from the heading
+		@include rem(padding-left, 100px);
+		.icon {
+			@include rem(left, -100px);
+		}
+		h3 {
+			@include rem(margin-top, -90px); //to pull in line with icon: value seems random, tested in chrome, ie, and ff (not sure how the math is working)
+			padding-top: 0;
+		}
+	}
+}
+
+.lt-ie9{
+	.with-icon { //just get rid of this on ie8 because it can't handle background image sizing correctly
+	//background: none;
+	//padding-left: 0;
+	//padding-top: 0;
+		.icon {
+			background: none;
+		}
+	}
+} 

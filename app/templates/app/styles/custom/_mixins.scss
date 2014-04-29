@@ -1,0 +1,52 @@
+// Your custom mixin SCSS should be written here...
+// I am also including bases for @extends here (placeholders or ref classes), because I don't want to create another file just yet
+
+/* ==========================================================================
+  Phone nums and Call-us base
+   ========================================================================== */
+%phone-nums {
+  white-space: nowrap;
+}
+
+%call-base {
+  display: inline-block;
+  background-color: $button_aqua;
+  color: #fff;
+  @include font-size($norm);
+  .phone {
+    @extend %phone-nums;
+    @include font-size($large);
+  }
+  @include rem(padding, 4px 10px);
+  &:hover {
+    background-color: $modern_aqua;
+    color: #fff;
+    border-bottom: 0 none;
+    text-decoration: none !important;
+    > * {
+      border-bottom: 0 none;
+    }
+  }
+  &.touchstarted {
+    background-color: $modern_aqua !important;
+  }
+  &.touchended:hover {
+    background-color: $button_aqua;
+  }
+}
+
+/* ==========================================================================
+  Home Image Breakpoints/Ranges
+   ========================================================================== */
+
+%mid-home-img-range {
+  @include respond("min-width: " $home-img-break2 and "max-width: " $home-img-break1);
+}
+
+%small-home-img-max {
+  @include respond("max-width: " $home-img-break3);
+}
+
+%anchor-border {
+  border-bottom: 1px dotted $modern_plum;
+}

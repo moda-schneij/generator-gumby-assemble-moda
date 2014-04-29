@@ -1,0 +1,69 @@
+/* ==========================================================================
+  Home page lead-in section and colgrid
+   ========================================================================== */
+
+//Gumby respond is automatically resetting this at the mobile breakpoint
+
+//See .call-us-wide, above
+
+#main-content {
+    .call-us-wide { //on phones, spans the top of main-content
+        @include row(nested);
+        @include respond("min-width: " + ($lead_in_break+1)) {
+            display: none;
+        }
+        .call-us {
+            display: block;
+            @include column(16);
+            width: 100%;
+            @include rem(padding, 6px 10px);
+        }
+    }
+    .concerns {
+        ul {
+            & > li {
+                width: 100%;
+            }
+        }
+    }
+    .lead-in { //unfortunate specificity seems necessary at this point because of other declarations (refactor?)
+        @include row(nested);
+        .concerns,
+        .call-button { 
+            @include hybrid(5);
+        }
+        .concerns {
+            margin-left: 0;
+            @include rem(padding-right, 10px);
+        }
+        @include respond("max-width: " + $lead_in_break) {
+            .concerns,
+            .call-button{
+                @include row(nested);
+            }
+            .concerns {
+                @include rem(margin-bottom, 10px); //double-check this;
+                li {
+                    width: 100%;
+                }
+            }
+            .call-button {
+                display: none !important;
+            }
+        }
+    }
+}
+
+
+
+
+	
+.lead-in-nested-col {
+	display: none;
+	.icon-icon_callus {
+		display: inline;
+	}
+	.call-us {
+		text-align: center;
+	}
+}

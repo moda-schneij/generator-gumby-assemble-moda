@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+/*import my own vars first*/
+
+@import "custom/vars";
+
 @import "modular-scale";
 
 @import "var/settings";

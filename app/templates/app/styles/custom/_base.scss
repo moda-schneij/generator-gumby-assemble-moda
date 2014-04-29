@@ -1,3 +1,142 @@
+// Your custom base SCSS should be written here...
+
+@import "compass/css3";
+
+/*=====================================================
+
+  @Font-face fonts
+
+  ======================================================*/
+
+@include font-face("omnes_ods_mediumregular", font-files("/fonts/omnesods_medium-roman-webfont.woff", "/fonts/omnesods_medium-roman-webfont.ttf", "/fonts/omnesods_medium-roman-webfont.svg"), "/fonts/omnesods_medium-roman-webfont.eot", true, true);
+@include font-face("omnes_ods_regularregular", font-files("/fonts/omnesods_regular-roman-webfont.woff", "/fonts/omnesods_regular-roman-webfont.ttf", "/fonts/omnesods_regular-roman-webfont.svg"), "/fonts/omnesods_regular-roman-webfont.eot", true, true);
+@include font-face("omnes_ods_semiregular", font-files("/fonts/omnesods_semibold-roman-webfont.woff", "/fonts/omnesods_semibold-roman-webfont.ttf", "/fonts/omnesods_semibold-roman-webfont.svg"), "/fonts/omnesods_semibold-roman-webfont.eot", true, true);
+@include font-face("omnes_ods_boldregular", font-files("/fonts/omnesods_bold-roman-webfont.woff", "/fonts/omnesods_bold-roman-webfont.ttf", "/fonts/omnesods_bold-roman-webfont.svg"), "/fonts/omnesods_bold-roman-webfont.eot", true, true);
+@include font-face("omnes_ods_lightregular", font-files("/fonts/omnesods_light-roman-webfont.woff", "/fonts/omnesods_light-roman-webfont.ttf", "/fonts/omnesods_light-roman-webfont.svg"), "/fonts/omnesods_light-roman-webfont.eot", true, true);
+
+@include font-face("omnes_ods_mediumitalic", font-files("/fonts/omnesods_medium-italic-webfont.woff", "/fonts/omnesods_medium-italic-webfont.ttf", "/fonts/omnesods_medium-italic-webfont.svg"), "/fonts/omnesods_medium-italic-webfont.eot", true, true);
+@include font-face("omnes_ods_regularitalic", font-files("/fonts/omnesods_regular-italic-webfont.woff", "/fonts/omnesods_regular-italic-webfont.ttf", "/fonts/omnesods_regular-italic-webfont.svg"), "/fonts/omnesods_regular-italic-webfont.eot", true, true);
+@include font-face("omnes_ods_semiitalic", font-files("/fonts/omnesods_semibold-italic-webfont.woff", "/fonts/omnesods_semibold-italic-webfont.ttf", "/fonts/omnesods_semibold-italic-webfont.svg"), "/fonts/omnesods_semibold-italic-webfont.eot", true, true);
+@include font-face("omnes_ods_bolditalic", font-files("/fonts/omnesods_bold-italic-webfont.woff", "/fonts/omnesods_bold-italic-webfont.ttf", "/fonts/omnesods_bold-italic-webfont.svg"), "/fonts/omnesods_bold-italic-webfont.eot", true, true);
+@include font-face("omnes_ods_lightitalic", font-files("/fonts/omnesods_light-italic-webfont.woff", "/fonts/omnesods_light-italic-webfont.ttf", "/fonts/omnesods_light-italic-webfont.svg"), "/fonts/omnesods_light-italic-webfont.eot", true, true);
+
+/*=====================================================
+
+  Top-level
+
+  ======================================================*/
+
+html {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  @include respond(desktop){
+    overflow-y: scroll;
+  }
+}
+
 body {
-  color: $warm_brown;
+  //overflow: hidden;
+  //overflow-y: auto;
+  //-webkit-overflow-scrolling: touch;
+  background: $body_bgcolor;
+  @include respond(desktop) {
+    @include rem(padding, 10px 10px 0);
+  }
+}
+
+/*=====================================================
+
+  Base font settings and Gumby overrides
+
+  ======================================================*/
+
+body, p, h1 {
+  font-family: "omnes_ods_regularregular", verdana, sans-serif;
+  font-weight: normal;
+}
+
+body, p, h2, h3 {
+    color: $warm_brown;
+}
+
+h2, h3, h4, h5, a, strong {
+  font-family: "omnes_ods_mediumregular", verdana, sans-serif;
+}
+
+h4, h5, a {
+    color: $modern_plum;
+}
+
+h1 {
+    color: $modern_aqua;
+    @include font-size($larger);
+    &.xlarge {
+        @include font-size($xlarge);
+    }
+    &.xxlarge {
+        @include font-size($xxlarge);
+    }
+    &.absurd {
+        @include font-size($xxxlarge);
+    }
+}
+h2 {
+  @include font-size($large);
+}
+h3 { @include font-size($med); }
+h4 { @include font-size($norm); }
+h5 { @include font-size($small); }
+
+@include respond(all-phones) {
+
+  h1 { @include font-size($large); }
+  h2 { @include font-size($med); }
+  h3 { @include font-size($norm); }
+
+}
+
+/*=====================================================
+
+  Responsive (Gumby overrides)
+
+  ======================================================*/
+
+// add to default responsive font-size adjustments
+
+@include respond(portrait-tablets) {
+  p, li, dt, dd, a {
+    @include font-size($base-font-size - 1); //default 1.1
+    //@include adjust-leading-to(1);
+    @include adjust-leading-to(0.90909090); //mirror font-size adjust = 1/1.1
+  }
+  .vertical-nav li {
+    @include font-size($base-font-size);
+  }
+}
+
+/*=====================================================
+
+  Links
+
+  ======================================================*/
+
+
+a {
+    &:hover {
+      text-decoration: none;
+      color: $modern_plum;
+      @extend %anchor-border;
+    }
+    &.touchstarted {
+        @extend %anchor-border;
+    }
+    &.touchended:hover {
+        border-bottom: 0 none;
+    }
+}
+
+li, a {
+  //fix issue with tap highlighting on android/webkit
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
 }

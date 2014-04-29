@@ -1,0 +1,140 @@
+// Your custom layout SCSS should be written here...
+@import "compass/layout/sticky-footer";
+
+@include sticky-footer(30px);
+
+//Compass sticky footer mixin
+
+/* ==========================================================================
+  Page nav/content layout (rows and columns)
+   ========================================================================== */
+#page, header, footer {
+    @include row;
+}
+
+header, #page, footer {
+    //@include rem(max-width, $document-width);
+}
+
+#page {
+    @include rem(margin-bottom, 40px);
+    //footer will have 20px top to separate it visually with body bg color
+}
+
+#branding {
+    position: relative;
+    min-width: 0;
+}
+
+.container {
+    @include rem(max-width, $document-width);
+    //this should be the crucial setting to constrain everything else
+    //@include rem(min-width, $min-device-width); //not necessary?
+    background: #fff;
+    height: 100%;
+    @include rem(padding, 20px 20px 0 20px);
+    //footer has its own bottom padding now
+    position: relative;
+    overflow: hidden;
+    @include respond(desktop) {
+        @include rem(margin, 0 auto 10px);
+    }
+}
+
+header, #page {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#navmain {
+    @include column(4);
+    @include pull(8);
+}
+
+#main-content {
+    @include column(8);
+    @include push(4);
+}
+
+//#main-content {
+//  @include column(11);
+//  @include push(1); //replaced with padding push_x in desktop responsive view, see below
+//  @include rem(margin-top, 27px); /*34 from comp -7px extra in layout
+//  background-color: #fff; //might use to cut off left nav background color, if I can work it
+//  @include respond(desktop) {
+//    margin-top: 0;
+//    padding-left: push_x(1); //alternative to including push mixin to force use of padding instead of margin. using in combo with background color to hide nav background, which varies in fixed/unfixed positioning
+//    margin-left: 0;
+//  }
+//  .main-heading {
+//    &:first-letter {
+//      text-transform: uppercase;
+//    }
+//  }
+//  & > *:last-child {
+//    margin-bottom: 0;
+//    padding-bottom: 0;
+//  }
+//  & > *:first-child {
+//    padding-top: 0;
+//  }
+//}
+
+/* ==========================================================================
+  Header/banner
+   ========================================================================== */
+
+header {
+    @include respond(desktop) {
+        @include rem(margin-bottom, 27px);
+        /*34 from comp -7px extra in layout*/
+    }
+}
+
+.nobannerimg {
+    @include rem(border-bottom, 1px solid $banner_border);
+}
+
+/* ==========================================================================
+  Footer
+   ========================================================================== */
+
+footer {
+  background-color: mix(white, $body_bgcolor, 67%);
+}
+
+
+/* footer {
+    //background: #fff;
+    background-color: mix(white, $body_bgcolor, 67%);
+    text-align: left;
+    @include clearfix;
+    height: auto;
+    & > *:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    width: auto;
+    @include rem(padding, 20px);
+    @include rem(margin-left, -20px);
+    @include rem(margin-right, -20px);
+} */
+
+.lt-ie9 footer {
+    //not sure where a 0px setting is established, but I seem to need this for ie8 to abide the margins
+    @include rem(margin-left, -20px);
+    @include rem(margin-right, -20px);
+}
+
+.end-matter {
+    & > *:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}
+
+.end-matter,
+.end-matter p {
+    @include font-size($small);
+    line-height: #{$small * 1.2};
+}

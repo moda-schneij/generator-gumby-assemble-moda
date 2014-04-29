@@ -1,0 +1,22 @@
+/* ==========================================================================
+  Home image
+   ========================================================================== */
+.home-img.responsive-loaded {
+	padding: 5px;
+  	@include rem(border, 1px solid $banner_border);
+}
+	#branding .home-img {
+		display: none;
+		@include respond(desktop) {
+			display: block;
+		}
+	}
+	#page .home-img {
+		display: block;
+		@include respond(desktop) {
+			display: none;
+		}
+	}
+  .lt-ie9 .home-img {
+    width: inherit; //necessary to get ie8 to scale the image in both directions
+  }

@@ -164,6 +164,7 @@ module.exports = function(grunt) {
         },
         compass: {
             options: {
+                require: ['modular-scale', 'sassy-math', 'rgbapng'],
                 cssDir: '.tmp/styles',
                 sassDir: '<%%= yeoman.app %>/styles',
                 imagesDir: '<%%= yeoman.app %>/images',

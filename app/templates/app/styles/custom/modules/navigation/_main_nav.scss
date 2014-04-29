@@ -1,0 +1,130 @@
+/* ==========================================================================
+  Navigation - not optimized mobile-first (at this point, maybe ever [started the wrong way])
+   ========================================================================== */
+
+//manual implementation of a dynamic-looking menu
+
+.home #main-nav .home a,
+.faqs #main-nav .faqs a,
+.confidentiality #main-nav .confidentiality a,
+.services #main-nav .services a,
+.resources #main-nav .resources a{
+    background-color: $compact_nav_selected_bgcolor;
+    color: $dark_aqua;
+    @include respond(desktop) {
+    	background-color: $body_bgcolor;
+    	color: $dark_aqua;
+    }  
+}
+
+#main-nav {
+	white-space: nowrap;
+	li {
+		padding-bottom: 0;
+		position: relative;
+		@include rem(left, -30px);
+		&:hover {
+			background-color: $light_plum;
+		}
+		&.touchstarted {
+		    background-color: $light_plum !important;
+		    a {
+				 border-bottom: 0 none;
+		    }
+		}
+		&.touchended:hover {
+		    background-color: #fff;
+		}
+	}
+	a {
+		display: block;
+		z-index: 1000;
+		@include rem(padding-left, 30px);
+		@include rem(height, 30px);
+		@include rem(line-height, 30px);
+		vertical-align: middle;
+		&:hover {
+			border-bottom: 0 none;
+		}
+	}
+}
+
+.vertical-nav {
+	@include respond(desktop){
+		//fixed-to-unfixed nav changes relative widths (positioning issue)
+		&.fixed {
+			overflow-x: hidden;
+			//width: inherit;
+			@include rem(max-width, 220px); //this is the width of the nav unfixed, and it overflows otherwise
+			@include rem(margin-left, -20px); //deals with issue on my android where fixed nav pulls away from left
+			@include rem(padding-left, 20px);
+		}
+		li {
+			cursor: pointer;
+			@include rem(width, 220px); //this is the width of the nav unfixed
+			@include rem(margin-bottom, 5px);
+		}
+		//this leaves a 10px gap where the menu width changes from unfixed to fixed
+	}
+}
+
+@include respond(all-phones) {
+	#nav-container,
+	.vertical-nav,
+	#main-nav {
+		width: 100%;
+		li {
+			width: 100%;
+			left: 0;
+			a {
+				width: 100%;
+				left: 0;
+			}
+		}
+	}
+	.vertical-nav {
+		overflow-x: hidden;
+	}
+	#main-nav {
+		max-height: 0;
+		margin-bottom: 0;
+		overflow: hidden;
+		@include transition(max-height 0.8s);
+		color: $modern_plum !important;
+		li {
+			background: $compact_nav_bgcolor;
+			padding-left: 0;
+			height: auto;
+			border-top: 1px solid #fff;
+			&.touchended:hover {
+				background-color: $compact_nav_bgcolor;
+			}
+		}
+		a {
+			@include rem(height, 36px);
+			@include rem(line-height, 36px);
+			@include rem(padding-left, 44px);
+		}
+		&.active {
+			@include rem(max-height, 340px);
+		}
+	}
+	.icon-menu-toggle {
+		display: inline-block;
+	}
+	.home {
+		#main-nav {
+			&.active {
+				border-top: 1px solid $banner_border;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+  Gumby override
+   ========================================================================== */
+ .gumby-no-touch .navbar ul li:hover > a,
+ .gumby-no-touch .navbar ul li:active > a {
+ 	background-color: inherit;
+ }

@@ -1,0 +1,82 @@
+/*=======================================================
+ Footer Nav
+=======================================================*/
+footer{
+	//this is not being used currently as the footer nav was scrapped last minute in favor of a sentence. If it's reintroduced, this should be re-imported and
+	//the navbar class added back to the nav list in the _footer.haml
+	.navbar {
+		background-color: mix(#fff, $body_bgcolor, 67%);
+		min-height: 0;
+		margin-top: 0;
+		text-align: center;
+		@include clearfix;
+		@include respond(desktop) {
+			display: block;
+			text-align: left;
+		}
+		ul {
+			display: table;
+			position: relative;
+			top: 0;
+			height: auto;
+			max-height: none;
+			background-color: transparent;
+			@include clearfix;
+			@include respond(desktop){
+				display: inline-block;
+				float: none;
+			}
+			li {
+				height: auto;
+				line-height: inherit;
+				vertical-align: middle;
+				text-align: left;
+				@include rem(padding-top, 10px);
+				@include rem(padding-bottom, 10px);
+				border-bottom: 1px solid $footer_nav_border;
+				&:first-child {
+					border-top: 1px solid $footer_nav_border;
+				}
+				@include respond(desktop) {
+					display: inline;
+					float: left;
+					border-bottom: 0 none;
+					line-height: 1;
+					&:first-child {
+						border-top: 0 none;
+					}
+					padding-top: 0;
+					padding-bottom: 0;
+					@include rem(padding-left, 18px);
+					@include rem(padding-right, 18px);
+					border-left: 1px solid $footer_nav_border;
+					&:first-child {
+						border-left: 0 none;
+						padding-left: 0;
+					}
+					&:first-child a {
+						padding-left: 0;
+					}
+					&:last-child a {
+						padding-right: 0;
+					}
+				}
+				& > a {
+					display: inline-block;
+				 	height: auto;
+				  	line-height: inherit;
+				  	border-collapse: collapse;
+					text-shadow: none;
+					padding-left: 0;
+					padding-right: 0;
+					@include respond(desktop){
+						border-bottom: 1px solid transparent;
+					}
+					&:hover {
+						@extend %anchor-border;
+					}
+				}
+			}
+		}
+	}
+}
