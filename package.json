@@ -1,6 +1,6 @@
 {
   "name": "generator-gumby-assemble-moda",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Moda-fied Yeoman generator for Gumby 2.6 Framework with Assemble.io",
   "keywords": [
     "yeoman-generator",
@@ -29,6 +29,10 @@
   },
   "devDependencies": {
     "mocha": "~1.9.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0",
+    "generator-mocha": ">=0.1.0"
   },
   "engines": {
     "node": ">=0.8.0"
