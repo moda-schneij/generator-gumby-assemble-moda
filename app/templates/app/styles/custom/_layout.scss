@@ -1,7 +1,7 @@
 // Your custom layout SCSS should be written here...
 @import "compass/layout/sticky-footer";
 
-@include sticky-footer(30px);
+@include sticky-footer(30px, "#root", "#root-footer", "#footer");
 
 //Compass sticky footer mixin
 
@@ -17,7 +17,7 @@ header, #page, footer {
 }
 
 #page {
-    @include rem(margin-bottom, 40px);
+    //@include rem(margin-bottom, 40px);
     //footer will have 20px top to separate it visually with body bg color
 }
 
@@ -48,12 +48,12 @@ header, #page {
 
 #navmain {
     @include column(4);
-    @include pull(8);
+    @include pull(left, 8);
 }
 
 #main-content {
     @include column(8);
-    @include push(4);
+    @include pull(right, 4);
 }
 
 //#main-content {
