@@ -117,7 +117,7 @@ module.exports = function(grunt) {
             }
         },
         clean: {
-            dist: [ '.tmp', '<%= yeoman.dist %>/!(source)/**/*' ],
+            dist: [ '.tmp', '<%%= yeoman.dist %>/!(source)/**/*' ],
             server: '.tmp'
         },
         jshint: {
