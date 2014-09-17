@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     // configurable paths
     var yeomanConfig = {
         app: 'app',
-        dist: 'dist'
+        dist: '../'
     };
 
     grunt.initConfig({
@@ -117,7 +117,7 @@ module.exports = function(grunt) {
             }
         },
         clean: {
-            dist: ['.tmp', '<%%= yeoman.dist %>/*'],
+            dist: [ '.tmp', '<%= yeoman.dist %>/!(source)/**/*' ],
             server: '.tmp'
         },
         jshint: {

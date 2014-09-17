@@ -3,14 +3,11 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 
 var Generator = module.exports = function Generator(args, options, config) {
+	var self = this;
   yeoman.generators.Base.apply(this, arguments);
 
   this.testFramework = this.options['test-framework'] || 'mocha';
   this.hookFor(this.testFramework, { as: 'app' });
-
-  this.on('end', function () {
-    this.installDependencies({ skipInstall: options['skip-install'] });
-  });
 };
 
 util.inherits(Generator, yeoman.generators.Base);
@@ -44,9 +41,21 @@ Generator.prototype.editorConfig = function editorConfig() {
 };
 
 Generator.prototype.gruntfile = function gruntfile() {
-  this.template('Gruntfile.js');
+  this.template('Gruntfile.js', 'Gruntfile.js');
 };
 
 Generator.prototype.packageJSON = function packageJSON() {
   this.template('_package.json', 'package.json');
+};
+
+Generator.prototype.install = function () {
+  if (this.options['skip-install']) {
+    return;
+  }
+  var done = this.async();
+  this.installDependencies({
+    skipMessage: this.options['skip-install-message'],
+    skipInstall: this.options['skip-install'],
+    callback: done
+  });
 };

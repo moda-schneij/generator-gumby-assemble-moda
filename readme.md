@@ -17,7 +17,6 @@ Prerequisites:
 <!-- Install it (only once): `npm install -g generator-gumby-assemble`-->
 Install yo and generator-generator: `npm install -g yo generator-generator`
 
-
 Clone this repo into your desired generator directory (not the directory from which you'll end up working):
 
 ```  
@@ -28,7 +27,7 @@ $ git clone https://github.com/moda-schneij/generator-gumby-assemble-moda.git
 
 - While in this directory, create a global npm link to use the generator on your machine by running `npm link`
   
-  - (if this fails for any reason, try it again)
+  - (You should see a lot of output. If this fails for any reason, try it again)
 	
 - Return to your sites folder, create a new folder, and cd into it:
 
@@ -43,7 +42,6 @@ $ cd gumby-assemble
 - Run `grunt` to build and `grunt server` to preview
 
 - You can run `yo gumby-assemble-moda` and choose to overwrite your entire site if you need to tweak the generator and recreate the project
-
 
 
 ## Options
