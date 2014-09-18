@@ -172,16 +172,16 @@ module.exports = function(grunt) {
             options: {
                 require: ['modular-scale', 'sassy-math', 'rgbapng'],
                 cssDir: '.tmp/styles',
-                sassDir: '<%= yeoman.app %>/styles',
-                imagesDir: '<%= yeoman.app %>/images',
+                sassDir: '<%%= yeoman.app %>/styles',
+                imagesDir: '<%%= yeoman.app %>/images',
                 javascriptsDir: '.tmp/scripts',
-                loadAll: '<%= yeoman.app %>/styles/extensions',
+                loadAll: '<%%= yeoman.app %>/styles/extensions',
                 relativeAssets: true,
                 force: true
             },
             dist: {
                 options: {
-                    fontsDir: '<%= yeoman.sitePath %>/fonts'
+                    fontsDir: '<%%= yeoman.sitePath %>/fonts'
                 }
             },
             server: {
