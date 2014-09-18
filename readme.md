@@ -1,6 +1,8 @@
 Yeoman Generator (Moda fork, modified) for Gumby 2.6 Framework using Assemble.io and RequireJS
 ========================================================================
 
+Note - this project has been modified heavily to build dist to a parent directory of the source (the generated project directory), and to be served from a domain subdirectory, e.g., modahealth.com/styleguide. This is a self-contained microsite of the main site.
+
 ## Usage
 
 Prerequisites:
@@ -15,11 +17,11 @@ Prerequisites:
 
 	
 <!-- Install it (only once): `npm install -g generator-gumby-assemble`-->
-Install yo and generator-generator: `npm install -g yo generator-generator`
+Install yo and generator-generator globally: `npm install -g yo generator-generator`
 
 Clone this repo into your desired generator directory (not the directory from which you'll end up working):
 
-```  
+```
 $ mkdir gumby-assemble-generator
 $ cd gumby-assemble-generator
 $ git clone https://github.com/moda-schneij/generator-gumby-assemble-moda.git
@@ -29,15 +31,20 @@ $ git clone https://github.com/moda-schneij/generator-gumby-assemble-moda.git
   
   - (You should see a lot of output. If this fails for any reason, try it again)
 	
-- Return to your sites folder, create a new folder, and cd into it:
+- Return to your sites directory, create a new folder AND a NESTED folder for the source (pre-build), and cd into it:
 
 ```
 $ cd /sites
 $ mkdir gumby-assemble
-$ cd gumby-assemble
+$ mkdir gumby-assemble/source
+$ cd gumby-assemble/source
 ```
 
+### Specific configuration for running a site in a subdirectory - otherwise, the generator's Gruntfile needs to be modified
+
 - Run `yo gumby-assemble-moda`
+
+- Edit the generated Gruntfile.js with the correct yeomanConfig.sitePath (in this case, it's 'styleguide')
 
 - Run `grunt` to build and `grunt server` to preview
 

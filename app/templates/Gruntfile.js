@@ -19,7 +19,8 @@ module.exports = function(grunt) {
     // configurable paths
     var yeomanConfig = {
         app: 'app',
-        dist: '..'
+        dist: '..',
+        sitePath: 'styleguide'
     };
 
     grunt.initConfig({
@@ -171,17 +172,22 @@ module.exports = function(grunt) {
             options: {
                 require: ['modular-scale', 'sassy-math', 'rgbapng'],
                 cssDir: '.tmp/styles',
-                sassDir: '<%%= yeoman.app %>/styles',
-                imagesDir: '<%%= yeoman.app %>/images',
+                sassDir: '<%= yeoman.app %>/styles',
+                imagesDir: '<%= yeoman.app %>/images',
                 javascriptsDir: '.tmp/scripts',
-                loadAll: '<%%= yeoman.app %>/styles/extensions',
+                loadAll: '<%= yeoman.app %>/styles/extensions',
                 relativeAssets: true,
                 force: true
             },
-            dist: {},
+            dist: {
+                options: {
+                    fontsDir: '<%= yeoman.sitePath %>/fonts'
+                }
+            },
             server: {
                 options: {
-                    debugInfo: true
+                    debugInfo: true,
+                    fontsDir: '../fonts'
                 }
             }
         },
